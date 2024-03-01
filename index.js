@@ -3,7 +3,6 @@ const fs = require('fs');
 const path = require('path');
 
 const app = express();
-const port = 8000;
 
 app.use(express.json());
 
@@ -27,6 +26,6 @@ if (!fs.existsSync(uploadsDir)) {
   fs.mkdirSync(uploadsDir);
 }
 
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
+app.listen("8000", () => {
+  console.log(`Server running at http://localhost:8000`);
 });
