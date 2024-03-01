@@ -6,7 +6,7 @@ const app = express();
 
 app.use(express.json());
 
-const apiDir = path.join(__dirname, 'api');
+/*const apiDir = path.join(__dirname, 'api');
 fs.readdirSync(apiDir).forEach(file => {
   if (file.endsWith('.js')) {
     const route = require(path.join(apiDir, file));
@@ -14,8 +14,10 @@ fs.readdirSync(apiDir).forEach(file => {
       app.use(route.config.host, route.router);
     }
   }
+});*/
+app.get('/', (req, res) => {
+  res.send('Hello, world!');
 });
-
 const accountsDir = './accounts';
 if (!fs.existsSync(accountsDir)) {
   fs.mkdirSync(accountsDir);
